@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import bg from "@/public/bg.png";
-
+console.log(process.env.NEXTAUTH_SECRET);
 export default function Page() {
   return (
     <main className="mt-24">

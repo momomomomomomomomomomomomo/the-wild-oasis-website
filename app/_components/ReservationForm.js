@@ -26,18 +26,16 @@ function ReservationForm({ cabin, user }) {
 
   return (
     <div className="scale-[1.01]">
-      <div className="bg-primary-800 text-primary-300 flex items-center justify-between px-16 py-2">
+      <div className="bg-primary-800 text-primary-300 flex items-center justify-between px-4 py-2 sm:px-16">
         <p>Logged in as</p>
 
         <div className="flex items-center gap-4">
           <div className="relative h-8 w-8">
-            <Image
+            <img
               referrerPolicy="no-referrer"
-              className="rounded-full object-cover"
+              className="h-full w-full rounded-full object-cover"
               src={user.image}
               alt={user.name}
-              fill
-              sizes="32px"
             />
           </div>
           <p>{user.name}</p>
@@ -49,7 +47,7 @@ function ReservationForm({ cabin, user }) {
           await createBookingWithData(formData);
           resetRange();
         }}
-        className="bg-primary-900 flex flex-col gap-5 px-16 py-10 text-lg"
+        className="bg-primary-900 flex flex-col gap-5 px-4 py-10 text-lg sm:px-16"
       >
         <div className="space-y-2">
           <label htmlFor="numGuests">How many guests?</label>

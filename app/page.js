@@ -15,7 +15,7 @@ export default function Page() {
         className="absolute object-cover object-top"
       />
 
-      <div className="z-10 text-center px-4">
+      <div className="relative z-10 text-center px-4">
         <h1 className="text-primary-50 mb-6 sm:mb-8 md:mb-10 text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-normal tracking-tight">
           Welcome to paradise.
         </h1>

@@ -18,14 +18,14 @@ async function CabinList({ filter }) {
   }
   if (!currentCabins.length)
     return (
-      <div className="grid align-middle sm:grid-cols-1 md:grid-cols-2 lg:gap-12 xl:gap-14">
+      <div className="grid align-middle grid-cols-1 lg:grid-cols-2 lg:gap-12 xl:gap-14">
         <h2 className="text-accent-400 col-span-full row-span-full min-h-screen text-center text-4xl font-semibold">
           There&apos;s no {filter} Cabins RN
         </h2>
       </div>
     );
   return (
-    <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:gap-12 xl:gap-14">
+    <div className="grid gap-8 grid-cols-1 lg:grid-cols-2 lg:gap-12 xl:gap-14">
       {currentCabins.map((cabin) => (
         <CabinCard cabin={cabin} key={cabin.id} />
       ))}

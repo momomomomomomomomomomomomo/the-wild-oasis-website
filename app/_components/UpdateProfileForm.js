@@ -3,10 +3,20 @@
 import { useState } from "react";
 import { updateProfile } from "../_lib/actions";
 import SubmitButton from "./SubmitButton";
+import { toast } from "react-hot-toast";
 
 function UpdateProfileForm({ children, guest }) {
   const { fullName, email, nationality, nationalID, countryFlag } = guest;
   const [flag, setFlag] = useState(countryFlag);
+
+  async function handleSubmit(formData) {
+    try {
+      await updateProfile(formData);
+      toast.success("Profile updated successfully");
+    } catch (error) {
+      toast.error(error.message);
+    }
+  }
 
   return (
     <div>
@@ -19,7 +29,7 @@ function UpdateProfileForm({ children, guest }) {
         faster and smoother. See you soon!
       </p>
       <form
-        action={updateProfile}
+        action={handleSubmit}
         className="bg-primary-900 flex flex-col gap-6 px-12 py-8 text-lg"
       >
         <div className="space-y-2">

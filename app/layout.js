@@ -2,6 +2,7 @@ import "@/app/_styles/globals.css";
 import Header from "@/app/_components/Header.js";
 import { Josefin_Sans } from "next/font/google";
 import { ReservationProvider } from "@/app/_components/ReservationContext";
+import { Toaster } from "react-hot-toast";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
             <ReservationProvider>{children}</ReservationProvider>
           </main>
         </div>
+        <Toaster position="top-center" />
       </body>
     </html>
   );

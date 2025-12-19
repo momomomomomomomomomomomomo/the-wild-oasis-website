@@ -1,9 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import { updateProfile } from "../_lib/actions";
-// import { useFormStatus } from "react-dom";
 import SubmitButton from "./SubmitButton";
 
 function UpdateProfileForm({ children, guest }) {
   const { fullName, email, nationality, nationalID, countryFlag } = guest;
+  const [flag, setFlag] = useState(countryFlag);
+
   return (
     <div>
       <h2 className="text-accent-400 mb-4 text-2xl font-semibold">
@@ -42,13 +46,19 @@ function UpdateProfileForm({ children, guest }) {
           <div className="flex items-center justify-between">
             <label htmlFor="nationality">Where are you from?</label>
             <img
-              src={countryFlag}
+              src={flag}
               alt="Country flag"
               className="h-5 rounded-sm"
             />
           </div>
 
-          {children}
+          <div
+            onChange={(e) => {
+              setFlag(e.target.value.split("%")[1]);
+            }}
+          >
+            {children}
+          </div>
         </div>
 
         <div className="space-y-2">
@@ -67,16 +77,5 @@ function UpdateProfileForm({ children, guest }) {
     </div>
   );
 }
-// function Button() {
-//   const { pending } = useFormStatus();
-//   return (
-//     <button
-//       disabled={pending}
-//       className="bg-accent-500 text-primary-800 hover:bg-accent-600 px-8 py-4 font-semibold transition-all disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300"
-//     >
-//       {pending ? "Updating..." : "Update profile"}
-//     </button>
-//   );
-// }
 
 export default UpdateProfileForm;

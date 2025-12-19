@@ -3,6 +3,7 @@ import { differenceInDays } from "date-fns";
 import { useReservation } from "./ReservationContext";
 import { createBooking } from "../_lib/actions";
 import SubmitButton from "./SubmitButton";
+import Image from "next/image";
 
 function ReservationForm({ cabin, user }) {
   // CHANGE
@@ -29,13 +30,16 @@ function ReservationForm({ cabin, user }) {
         <p>Logged in as</p>
 
         <div className="flex items-center gap-4">
-          <img
-            // Important to display google profile images
-            referrerPolicy="no-referrer"
-            className="h-8 rounded-full"
-            src={user.image}
-            alt={user.name}
-          />
+          <div className="relative h-8 w-8">
+            <Image
+              referrerPolicy="no-referrer"
+              className="rounded-full object-cover"
+              src={user.image}
+              alt={user.name}
+              fill
+              sizes="32px"
+            />
+          </div>
           <p>{user.name}</p>
         </div>
       </div>

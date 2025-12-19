@@ -40,7 +40,7 @@ export default async function Navigation() {
                 />
               </div>
               <span className="hidden sm:inline">Guest area</span>
-              <span className="sm:hidden">Account</span>
+              <span className="sm:hidden">Guest area</span>
             </Link>
           ) : (
             <Link

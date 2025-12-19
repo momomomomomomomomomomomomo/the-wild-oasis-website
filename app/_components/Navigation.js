@@ -29,14 +29,16 @@ export default async function Navigation() {
               href="/account"
               className="hover:text-accent-400 flex items-center gap-2 sm:gap-4 transition-colors"
             >
-              <Image
-                referrerPolicy="no-referrer"
-                alt={session.user.name}
-                className="h-7 w-7 sm:h-8 sm:w-8 rounded-full"
-                src={session.user.image}
-                width={32}
-                height={32}
-              />
+              <div className="relative h-7 w-7 sm:h-8 sm:w-8 rounded-full overflow-hidden">
+                <Image
+                  referrerPolicy="no-referrer"
+                  alt={session.user.name}
+                  className="rounded-full object-cover"
+                  src={session.user.image}
+                  fill
+                  sizes="32px"
+                />
+              </div>
               <span className="hidden sm:inline">Guest area</span>
               <span className="sm:hidden">Account</span>
             </Link>

@@ -12,13 +12,13 @@ export const revalidate = 3600;
 
 export default function Page() {
   return (
-    <div className="grid grid-cols-5 items-center gap-x-24 gap-y-32 text-lg">
-      <div className="col-span-3">
-        <h1 className="text-accent-400 mb-10 text-4xl font-medium">
+    <div className="grid grid-cols-1 lg:grid-cols-5 items-center gap-x-8 sm:gap-x-12 lg:gap-x-24 gap-y-12 sm:gap-y-16 lg:gap-y-32 text-base sm:text-lg px-4 sm:px-0">
+      <div className="lg:col-span-3">
+        <h1 className="text-accent-400 mb-6 sm:mb-8 md:mb-10 text-2xl sm:text-3xl md:text-4xl font-medium">
           Welcome to The Wild Oasis
         </h1>
 
-        <div className="space-y-8">
+        <div className="space-y-4 sm:space-y-6 md:space-y-8">
           <p>
             Where nature&apos;s beauty and comfortable living blend seamlessly.
             Hidden away in the heart of the Italian Dolomites, this is your
@@ -44,7 +44,7 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="col-span-2">
+      <div className="lg:col-span-2">
         <Image
           src={image1}
           quality={80}
@@ -53,7 +53,7 @@ export default function Page() {
         />
       </div>
 
-      <div className="relative col-span-2 aspect-square">
+      <div className="relative lg:col-span-2 aspect-square h-64 sm:h-80 lg:h-auto">
         <Image
           src={"/about-2.jpg"}
           fill
@@ -61,12 +61,12 @@ export default function Page() {
         />
       </div>
 
-      <div className="col-span-3">
-        <h1 className="text-accent-400 mb-10 text-4xl font-medium">
+      <div className="lg:col-span-3">
+        <h1 className="text-accent-400 mb-6 sm:mb-8 md:mb-10 text-2xl sm:text-3xl md:text-4xl font-medium">
           Managed by our family since 1962
         </h1>
 
-        <div className="space-y-8">
+        <div className="space-y-4 sm:space-y-6 md:space-y-8">
           <p>
             Since 1962, The Wild Oasis has been a cherished family-run retreat.
             Started by our grandparents, this haven has been nurtured with love
@@ -85,7 +85,7 @@ export default function Page() {
           <div>
             <Link
               href="/cLinkbins"
-              className="bg-accent-500 text-primary-800 hover:bg-accent-600 mt-4 inline-block px-8 py-5 text-lg font-semibold transition-all"
+              className="bg-accent-500 text-primary-800 hover:bg-accent-600 mt-4 inline-block px-6 sm:px-8 py-4 sm:py-5 text-base sm:text-lg font-semibold transition-all"
             >
               Explore our luxury cabins
             </Link>

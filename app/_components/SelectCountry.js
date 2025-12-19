@@ -3,7 +3,14 @@ import { getCountries } from '@/app/_lib/data-service';
 // Let's imagine your colleague already built this component 😃
 
 async function SelectCountry({ defaultCountry, name, id, className }) {
-  const countries = await getCountries();
+  let countries = [];
+  try {
+    countries = await getCountries();
+  } catch (error) {
+    console.error("Failed to fetch countries:", error);
+    // Fallback to empty list or basic mock if needed
+  }
+
   const flag =
     countries.find((country) => country.name === defaultCountry)?.flag ?? '';
 

@@ -24,10 +24,6 @@ function UpdateProfileForm({ children, guest }) {
         Update your guest profile
       </h2>
 
-      <p className="text-primary-200 mb-8 text-lg">
-        Providing the following information will make your check-in process
-        faster and smoother. See you soon!
-      </p>
       <form
         action={handleSubmit}
         className="bg-primary-900 flex flex-col gap-6 px-12 py-8 text-lg"

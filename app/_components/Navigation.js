@@ -24,20 +24,24 @@ export default async function Navigation() {
           </Link>
         </li>
         <li>
-          {session?.user?.image ? (
+          {session?.user ? (
             <Link
               href="/account"
               className="hover:text-accent-400 flex items-center gap-2 sm:gap-4 transition-colors"
             >
-              <div className="relative h-7 w-7 sm:h-8 sm:w-8 rounded-full overflow-hidden">
-                <Image
-                  referrerPolicy="no-referrer"
-                  alt={session.user.name}
-                  className="rounded-full object-cover"
-                  src={session.user.image}
-                  fill
-                  sizes="32px"
-                />
+              <div className="relative h-7 w-7 sm:h-8 sm:w-8 rounded-full overflow-hidden bg-accent-500 flex items-center justify-center text-primary-800 font-semibold text-sm">
+                {session.user.image ? (
+                  <Image
+                    referrerPolicy="no-referrer"
+                    alt={session.user.name}
+                    className="rounded-full object-cover"
+                    src={session.user.image}
+                    fill
+                    sizes="32px"
+                  />
+                ) : (
+                  <span>{session.user.name?.charAt(0).toUpperCase()}</span>
+                )}
               </div>
               <span className="hidden sm:inline">Guest area</span>
               <span className="sm:hidden">Guest area</span>
@@ -48,7 +52,7 @@ export default async function Navigation() {
               className="hover:text-accent-400 transition-colors"
             >
               <span className="hidden sm:inline">Guest area</span>
-              <span className="sm:hidden">Account</span>
+              <span className="sm:hidden">Guest area</span>
             </Link>
           )}
         </li>
